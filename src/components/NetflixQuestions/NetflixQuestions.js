@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './NetFlixQuestions.css'
  const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
+  
 
   const toggleOpen = () => {
     setIsOpen(!isOpen);

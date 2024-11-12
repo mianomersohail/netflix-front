@@ -44,15 +44,15 @@ export default function Setp1() {
                                     value={email}
                                     onChange={setEmails}
                                     sx={{
-                                        input: { color: 'black', width: '100%' },
+                                        input: { color: 'white', width: '100%' },
                                         '& .MuiFilledInput-root': {
-                                            border: '2px solid black',
+                                            border: '2px solid white',
                                             fontSize: '20px',
                                             width: '100%'
                                         },
 
                                         '& .MuiFormLabel-root': {
-                                            color: 'black'
+                                            color: 'white'
                                         }
 
                                     }}
@@ -76,15 +76,15 @@ export default function Setp1() {
                                     label="Add a Password"
                                     variant="filled"
                                     sx={{
-                                        input: { color: 'black', width: '100%' },
+                                        input: { color: 'white', width: '100%' },
                                         '& .MuiFilledInput-root': {
-                                            border: '2px solid black',
+                                            border: '2px solid white',
                                             fontSize: '20px',
                                             width: '100%'
                                         },
 
                                         '& .MuiFormLabel-root': {
-                                            color: 'black'
+                                            color: 'white'
                                         }
 
                                     }}

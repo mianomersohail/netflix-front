@@ -63,7 +63,7 @@ export default function Login() {
         <div className="absolute" >
           <img
             className="w-[100vw] h-[100vh]"
-            src="https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg"
+            src="https://raw.githubusercontent.com/srujanjapthi/Netflix-Clone-Project---codewithharry/refs/heads/main/assets/images/background-image-netflix.jpg"
             alt="banner"
 
           />

@@ -16,7 +16,7 @@ const store = configureStore({
     reducer: {
         user: step1slice,
         users: persistedUserReducer,
-         movie:movieSlice
+         movies:movieSlice
     },
 });
 

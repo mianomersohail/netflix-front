@@ -11,12 +11,12 @@ export default function Header({backgroundstyle,buttonname,onClick,loading}) {
           // "linear-gradient(to bottom, rgba(0, 0, 0, 1.2), rgba(0, 0, 0, 1.2), rgba(0, 0, 0, 0))",
       
       }}
-      className="absolute top-0 left-0 w-full z-10 flex items-center justify-between px-6 "
+      className="absolute top-0 left-0 w-full z-10 flex items-center justify-between py-4 px-6 "
     >
       <img
         className="w-56"
         alt="netflix-logo"
-        src="https://cdn.prod.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98393d75ff281d_580b57fcd9996e24bc43c529.png"
+        src="https://raw.githubusercontent.com/srujanjapthi/Netflix-Clone-Project---codewithharry/9f48ac863d7b02aaf3fd000457a658b432c0bcba/assets/images/logo.svg"
       />
       <div className="flex items-center">
         <IoIosArrowDropdown size="24px" color="white" />
