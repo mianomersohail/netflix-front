@@ -70,7 +70,7 @@ export default function Login() {
         </div>
         <form
           onSubmit={getInputData}
-          className="flex p-12 flex-col my-36 mx-auto left-0 right-0 items-center opacity-90 rounded-md justify-center absolute bg-black w-3/12"
+          className="flex p-12 flex-col my-36 mx-auto left-0 right-0 items-center opacity-90 rounded-md justify-center absolute bg-black max-lg:w-auto  w-3/12 "
         >
           <h1 className="text-3xl text-white mb-5 font-bold">
             {isLogin ? "Login" : "Sign Up"}

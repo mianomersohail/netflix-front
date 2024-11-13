@@ -100,7 +100,7 @@ export default function Browser() {
     return (
         <>
             {loading && (<div>loading...</div>)}
-            <Header buttonname='signOut' onClick={logout} />
+            <Header buttonname='SignOut' onClick={logout} buttonnametwo={'Search Movies'} show={true} />
 
             <MainContainer />
             <MovieContainer />

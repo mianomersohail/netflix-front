@@ -1,0 +1,10 @@
+.no-scrollbar {
+    overflow-x: scroll;
+    scroll-behavior: smooth; /* For smooth scrolling */
+    scrollbar-width: none; /* For Firefox */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+  }
+  

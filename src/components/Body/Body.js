@@ -7,6 +7,7 @@ import Step2 from '../Finishsettingup/step2';
 import Step3 from '../Finishsettingup/step3'
 import Step4 from '../Finishsettingup/Step4'
 import FAQSection from '../NetflixQuestions/NetflixQuestions'
+import SearchMovies from '../SearchMovie/SearchMovie';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 export default function Body() {
@@ -41,6 +42,9 @@ export default function Body() {
     },{
       path:"/netflixquestions",
       element:<FAQSection/>
+    },{
+      path:"/SearchMovies",
+      element:<SearchMovies/>
     }
   ]);
   return (
