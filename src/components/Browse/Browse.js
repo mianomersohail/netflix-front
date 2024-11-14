@@ -24,11 +24,11 @@ export default function Browser() {
     const user = useSelector(state => state.users.users);
 
     const dispatch = useDispatch()
-    useEffect(() => {
-        if (!user) {
-            navigate('/login');
-        }
-    }, [user]);
+    // useEffect(() => {
+    //     if (!user) {
+    //         navigate('/login');
+    //     }
+    // }, [user]);
 
     const logout = async () => {
         const headers = {
@@ -100,7 +100,7 @@ export default function Browser() {
     return (
         <>
             {loading && (<div>loading...</div>)}
-            <Header buttonname='SignOut' onClick={logout} buttonnametwo={'Search Movies'} show={true} />
+            {/* <Header buttonname='SignOut' onClick={logout} buttonnametwo={'Search Movies'} show={true} /> */}
 
             <MainContainer />
             <MovieContainer />

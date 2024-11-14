@@ -1,0 +1,8 @@
+/* Check if any rules like this are applied */
+.icon {
+    opacity: 0; /* or display: none; */
+    color:'red' !important
+}
+.icon:hover {
+    opacity: 1; /* or display: block; */
+}

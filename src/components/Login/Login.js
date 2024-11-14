@@ -11,58 +11,82 @@ export default function Login() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { loading, error, data, get, post } = useApi(url)
+  let [loading, setLoading] = useState(false); // Added state for loading
+
+  // const { loading, error, data, get, post } = useApi(url)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { showToast, ToastComponent } = useCustomToast();
-  const getInputData = async (event) => {
-    event.preventDefault();
-    try {
-      const headers = {
-        'Content-Type': 'application/json',
-        withCredentials: true,
-      };
-      const data = {
-        fullName,
-        email,
-        password
-      };
-      if (!isLogin) {
-        let result;
-        result = await post('/register', data, headers);
-        if (result.success) {
-          showToast("success", result.message);
-          setIsLogin(true)
-        }
+  const getInputData=async(event)=>{
+    event.preventDefault()
+    try{
+      if (email == 'Admin' && password == "Admin") {
+      setLoading(true);
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        navigate('/browse');
       } else {
-        let result;
-        result = await post('/log', data, headers);
-        if (result.success) {
-          showToast('success', result.message)
-          dispatch(setUser(result.user))
-          navigate('/browse')
-        }
+        showToast("error", 'Invalid Email Password');
       }
-    } catch (error) {
-      const errorMessage =
-        error.response && error.response.data && error.response.data.message
-          ? error.response.data.message
-          : error.message || "An error occurred";
-      showToast("error", errorMessage);
+    }catch(error){
+      console.log(error)
+      showToast("error",'NetWork Error');
+
+
+
+    }finally{
+      setEmail('')
+      setFullName('')
+      setPassword('')
     }
-    finally {
-      setFullName('');
-      setEmail('');
-      setPassword('');
-    }
-  };
+  }
+  // const getInputData = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const headers = {
+  //       'Content-Type': 'application/json',
+  //       withCredentials: true,
+  //     };
+  //     const data = {
+  //       fullName,
+  //       email,
+  //       password
+  //     };
+  //     if (!isLogin) {
+  //       let result;
+  //       result = await post('/register', data, headers);
+  //       if (result.success) {
+  //         showToast("success", result.message);
+  //         setIsLogin(true)
+  //       }
+  //     } else {
+  //       let result;
+  //       result = await post('/log', data, headers);
+  //       if (result.success) {
+  //         showToast('success', result.message)
+  //         dispatch(setUser(result.user))
+  //         navigate('/browse')
+  //       }
+  //     }
+  //   } catch (error) {
+  //     const errorMessage =
+  //       error.response && error.response.data && error.response.data.message
+  //         ? error.response.data.message
+  //         : error.message || "An error occurred";
+  //     showToast("error", errorMessage);
+  //   }
+  //   finally {
+  //     setFullName('');
+  //     setEmail('');
+  //     setPassword('');
+  //   }
+  // };
   return (
     <>
       <div className="w-full" >
         <Header backgroundstyle="linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))" buttonname="Home" onClick={() => { navigate("/") }} />
-        <div className="absolute" >
+        <div className="absolute " >
           <img
-            className="w-[100vw] h-[100vh]"
+            className="w-[100vw] h-[100vh] max-lg:h-[auto]  "
             src="https://raw.githubusercontent.com/srujanjapthi/Netflix-Clone-Project---codewithharry/refs/heads/main/assets/images/background-image-netflix.jpg"
             alt="banner"
 
@@ -70,7 +94,7 @@ export default function Login() {
         </div>
         <form
           onSubmit={getInputData}
-          className="flex p-12 flex-col my-36 mx-auto left-0 right-0 items-center opacity-90 rounded-md justify-center absolute bg-black max-lg:w-auto  w-3/12 "
+          className="flex p-12 flex-col my-36 max-lg:my-[3rem]  mx-auto left-0 right-0 items-center opacity-90 rounded-md justify-center absolute bg-black max-lg:w-auto    w-3/12 "
         >
           <h1 className="text-3xl text-white mb-5 font-bold">
             {isLogin ? "Login" : "Sign Up"}
@@ -86,7 +110,7 @@ export default function Login() {
               />
             )}
             <input
-              type="email"
+              type=""
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               className="outline-none p-3 my-2 rounded-sm bg-gray-800 text-white"

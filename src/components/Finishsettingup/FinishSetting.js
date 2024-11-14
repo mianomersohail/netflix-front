@@ -4,7 +4,7 @@ export default function Finish() {
     const navigation=useNavigate()
     return (
         <>
-            <Header style={{ position: 'relative', zIndex: 10 }} />
+            <Header buttonname={'Home'} onClick={()=>{navigation('/')}} style={{ position: 'relative', zIndex: 10 }} />
             <form className='flex items-center justify-center' style={{  height: '100vh', position: 'relative', zIndex: 1 }}>
                 <div>
                     <div className='flex items-center justify-center'>
@@ -20,15 +20,16 @@ export default function Finish() {
                         </p>
 
                     </div>
-                    <div className='flex items-center justify-center'>
+                    <div className='flex items-center justify-center text-center'>
                         <h4 style={{ fontSize: "32px", fontWeight: "bolder" }}>Finish setting up your account
                         </h4>
                     </div>
                     <div className='flex items-center justify-center '>
                         <p className='w-[60%] mt-3' style={{ textAlign: "center", fontWeight: "bold" }}>Netflix is personalized for you. Create a password to watch on any device at any time.</p>
                     </div>
-                    <div className='flex items-center justify-center'>
-                        <button onClick={()=>{navigation('/step1finish')}} style={{border:'solid',width:'24rem', padding:'1rem',fontWeight:"bold",background:'#E50914',color:'white',marginTop:'1rem'}}>Next</button>
+                    <div className='flex items-center justify-center'    onClick={()=>{navigation('/step1finish')}} style={{border:'solid', padding:'1rem',fontWeight:"bold",background:'#E50914',color:'white',marginTop:'1rem'}}>
+                        <button   className="w-[12rem] sm:w-[24rem]">
+                     Next</button>
                     </div>
                 </div>
             </form>

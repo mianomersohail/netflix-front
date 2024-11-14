@@ -17,15 +17,12 @@ export default function MovieList({ title, movies }) {
       scrollContainer.scrollLeft = (scrollContainer.scrollWidth - containerWidth) * scrollPercentage;
     };
 
-    // Add the mousemove event listener for hover scrolling
     scrollContainer.addEventListener("mousemove", handleMouseMove);
 
-    // Cleanup the event listener
     return () => {
       scrollContainer.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-
   return (
     <div className="px-8">
       <h1 className="text-3xl py-3 text-white">{title}</h1>
